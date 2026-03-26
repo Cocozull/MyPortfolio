@@ -239,7 +239,7 @@ h1 {
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
 .about-avatar-wrap { display: flex; justify-content: center; }
 .about-avatar {
-  width: 240px; height: 240px; border-radius: 24px;
+  width: 320px; height: 450px; border-radius: 24px;
   background: linear-gradient(135deg, var(--c-accent), var(--c-accent2), var(--c-accent3));
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-head); font-size: 5rem; font-weight: 800;
@@ -253,6 +253,10 @@ h1 {
   content: ''; position: absolute; inset: -3px; border-radius: 26px;
   background: linear-gradient(135deg, var(--c-accent), var(--c-accent2), var(--c-accent3));
   z-index: -1; opacity: .4; filter: blur(16px);
+}
+.about-avatar img { display:block; border-radius:24px; width:300px;
+  -webkit-mask-image: radial-gradient(circle at center,black 40%,transparent 100%);
+  mask-image: radial-gradient(circle at center,black 40%,transparent 100%);
 }
 .about-facts { display: flex; flex-direction: column; gap: 14px; margin-top: 24px; }
 .fact {
