@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Site agence de voyage — Corentin Fauveau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="project-style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">CF.</a>
+  <a href="index.html#projects" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Retour au portfolio
+  </a>
+</nav>
+
+<div class="project-hero-orb orb-a" style="background:var(--c-accent)"></div>
+<div class="project-hero-orb orb-b" style="background:var(--c-accent2)"></div>
+
+<div class="project-hero">
+  <div class="project-eyebrow reveal">Projet académique · Web</div>
+  <h1 class="reveal">Site web<br>agence de voyage</h1>
+  <div class="project-hero-tags reveal reveal-delay-1">
+    <span class="tag">HTML5</span>
+    <span class="tag tag-purple">CSS3</span>
+    <span class="tag">Design responsive</span>
+    <span class="tag">Navigation multi-pages</span>
+  </div>
+  <div class="project-hero-meta reveal reveal-delay-2">
+    <div class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 6h12M5 2v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <span><strong>2024–2025</strong> · BUT 1</span>
+    </div>
+    <div class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <span><strong>~4 semaines</strong> de développement</span>
+    </div>
+    <div class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z" stroke="currentColor" stroke-width="1.2"/></svg>
+      <span><strong>IUT Paris-Saclay</strong> · Communication web</span>
+    </div>
+  </div>
+</div>
+
+<div class="project-main-img reveal">
+  <div class="img-placeholder" style="background:linear-gradient(135deg,#0f1a3a,#1a2f5e)">
+    <img src="images/siteweb.jpg" alt="Site agence de voyage">
+  </div>
+</div>
+
+<div class="project-content">
+  <div class="project-main">
+
+    <div class="content-block reveal">
+      <h2>Présentation du projet</h2>
+      <p>Dans le cadre du module de communication web, j'ai conçu et développé un site web complet pour une agence de voyage fictive. L'objectif était de produire un site professionnel, structuré et navigable, en appliquant les bonnes pratiques HTML5 et CSS3.</p>
+      <p>Le site présente des destinations, des offres de voyages et un formulaire de contact, le tout organisé sur plusieurs pages liées entre elles par une navigation cohérente.</p>
+    </div>
+
+    <div class="content-block reveal">
+      <h2>Fonctionnalités</h2>
+      <ul class="feature-list">
+        <li>Architecture multi-pages avec navigation fluide entre les sections</li>
+        <li>Page d'accueil avec présentation visuelle des destinations phares</li>
+        <li>Page de listing des offres avec filtres par destination</li>
+        <li>Page de détail d'une destination avec galerie d'images</li>
+        <li>Formulaire de contact avec validation HTML5 native</li>
+        <li>Design entièrement responsive, adapté mobile et desktop</li>
+        <li>Mise en page avec Flexbox et CSS Grid</li>
+      </ul>
+    </div>
+
+    <div class="content-block reveal">
+      <h2>Extrait de code</h2>
+      <div class="code-block">
+        <div class="code-block-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-lang">CSS — style.css</span>
+        </div>
+        <pre><span class="cm">/* Grille responsive des destinations */</span>
+<span class="nb">.destinations-grid</span> {
+  <span class="kw">display</span>: grid;
+  <span class="kw">grid-template-columns</span>: <span class="fn">repeat</span>(auto-fill, <span class="fn">minmax</span>(<span class="nb">280px</span>, <span class="nb">1fr</span>));
+  <span class="kw">gap</span>: <span class="nb">24px</span>;
+}
+
+<span class="nb">.card</span>:<span class="fn">hover</span> {
+  <span class="kw">transform</span>: <span class="fn">translateY</span>(<span class="nb">-6px</span>);
+  <span class="kw">box-shadow</span>: <span class="nb">0 20px 40px</span> <span class="fn">rgba</span>(<span class="nb">0,0,0,.15</span>);
+}
+
+<span class="kw">@media</span> (max-width: <span class="nb">768px</span>) {
+  <span class="nb">.destinations-grid</span> {
+    <span class="kw">grid-template-columns</span>: <span class="nb">1fr</span>;
+  }
+}</pre>
+      </div>
+    </div>
+
+
+    <div class="content-block reveal">
+      <h2>Ce que j'ai appris</h2>
+      <div class="learning-grid">
+        <div class="learning-item"><strong>HTML5 sémantique</strong>Utilisation correcte des balises article, section, nav, header et footer.</div>
+        <div class="learning-item"><strong>CSS Grid & Flexbox</strong>Maîtrise des deux systèmes de mise en page pour des layouts complexes.</div>
+        <div class="learning-item"><strong>Design responsive</strong>Media queries et approche mobile-first pour tous les écrans.</div>
+        <div class="learning-item"><strong>UX & accessibilité</strong>Navigation claire, contrastes suffisants et formulaires accessibles.</div>
+      </div>
+    </div>
+
+    <div class="content-block reveal">
+      <h2>Difficultés rencontrées</h2>
+      <p>La cohérence visuelle entre les pages a été le principal défi : maintenir un style uniforme sans framework CSS impose une organisation rigoureuse du fichier de styles et une bonne utilisation des variables CSS.</p>
+      <p>L'adaptation mobile a également demandé beaucoup d'itérations, notamment pour la navigation et la grille des destinations.</p>
+    </div>
+
+  </div>
+
+  <aside class="project-sidebar">
+    <div class="sidebar-card reveal">
+      <h3>Stack technique</h3>
+      <div class="sidebar-stack">
+        <div class="stack-item"><div class="stack-dot coral"></div>HTML5</div>
+        <div class="stack-item"><div class="stack-dot purple"></div>CSS3</div>
+        <div class="stack-item"><div class="stack-dot"></div>Flexbox / Grid</div>
+        <div class="stack-item"><div class="stack-dot teal"></div>Variables CSS</div>
+        <div class="stack-item"><div class="stack-dot"></div>VS Code</div>
+      </div>
+    </div>
+    <div class="sidebar-card reveal reveal-delay-1">
+      <h3>Statistiques</h3>
+      <div class="sidebar-stats">
+        <div class="stat"><span class="stat-label">Durée</span><span class="stat-value">4 semaines</span></div>
+        <div class="stat"><span class="stat-label">Pages</span><span class="stat-value">5 pages</span></div>
+        <div class="stat"><span class="stat-label">Type</span><span class="stat-value" style="font-size:.9rem">Projet solo</span></div>
+        <div class="stat">
+          <span class="stat-label">Difficulté</span>
+          <div class="difficulty-bar">
+            <div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div><div class="diff-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card reveal reveal-delay-2">
+      <h3>Liens</h3>
+      <div class="sidebar-links">
+        <a href="#" class="sidebar-link">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M15.97 9.058l-.895-2.756L13.3 1.7a.37.37 0 00-.703 0L10.82 6.3H5.18L3.403 1.7a.37.37 0 00-.703 0L.925 6.302.03 9.058a.704.704 0 00.256.787L8 15.002l7.714-5.157a.704.704 0 00.256-.787"/></svg>
+          Voir sur GitLab
+        </a>
+        <a href="#" class="sidebar-link">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M1 7.5h13M7.5 1l6.5 6.5-6.5 6.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Voir le site en ligne
+        </a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="project-nav">
+  <a href="projet-1.html" class="project-nav-btn">
+    <div class="nav-btn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div><div class="nav-btn-label">Précédent</div><div class="nav-btn-title">Mini jeu vidéo C++</div></div>
+  </a>
+  <a href="projet-3.html" class="project-nav-btn next">
+    <div class="nav-btn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div><div class="nav-btn-label">Suivant</div><div class="nav-btn-title">Base de données entreprise</div></div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">CF.</a>
+    <p>Étudiant en BUT Informatique à l'IUT Paris-Saclay</p>
+    <p class="footer-copy">© 2025 <span>Corentin Fauveau</span>. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

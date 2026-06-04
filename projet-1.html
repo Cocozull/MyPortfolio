@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mini jeu vidéo C++ — Corentin Fauveau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="project-style.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">CF.</a>
+  <a href="index.html#projects" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    Retour au portfolio
+  </a>
+</nav>
+
+<div class="project-hero-orb orb-a" style="background:#ff7850"></div>
+<div class="project-hero-orb orb-b" style="background:var(--c-accent2)"></div>
+
+<div class="project-hero">
+  <div class="project-eyebrow reveal">Projet académique · C++</div>
+  <h1 class="reveal">Mini jeu vidéo<br>en C++</h1>
+  <div class="project-hero-tags reveal reveal-delay-1">
+    <span class="tag tag-coral">C++</span>
+    <span class="tag tag-purple">Algorithmique</span>
+    <span class="tag">POO</span>
+    <span class="tag">Structures de données</span>
+  </div>
+  <div class="project-hero-meta reveal reveal-delay-2">
+    <div class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 6h12M5 2v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <span><strong>2024–2025</strong> · BUT 1</span>
+    </div>
+    <div class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+      <span><strong>~3 semaines</strong> de développement</span>
+    </div>
+    <div class="meta-item">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z" stroke="currentColor" stroke-width="1.2"/></svg>
+      <span><strong>IUT Paris-Saclay</strong> · Orsay</span>
+    </div>
+  </div>
+</div>
+
+<div class="project-main-img reveal">
+  <div class="img-placeholder" style="background:linear-gradient(135deg,#2a1010,#4a1a1a)">
+    <img src="images/projectc++.gif" alt="Mini jeu vidéo C++">
+  </div>
+</div>
+
+<div class="project-content">
+  <div class="project-main">
+
+    <div class="content-block reveal">
+      <h2>Présentation du projet</h2>
+      <p>Dans le cadre d'une étude comparative d'approches algorithmiques, j'ai développé un mini jeu vidéo en C++. L'objectif était de concevoir un jeu fonctionnel en console tout en expérimentant différentes stratégies algorithmiques pour mesurer leur impact sur les performances et la lisibilité du code.</p>
+      <p>Ce projet m'a permis de mettre en pratique les concepts de la programmation orientée objet appris en cours, en les appliquant à un contexte ludique concret.</p>
+    </div>
+
+    <div class="content-block reveal">
+      <h2>Fonctionnalités</h2>
+      <ul class="feature-list">
+        <li>Boucle de jeu principale avec gestion des tours et des états</li>
+        <li>Système de collision et détection des interactions entre entités</li>
+        <li>Gestion des entrées clavier en temps réel</li>
+        <li>Système de score et de progression du joueur</li>
+        <li>Plusieurs niveaux de difficulté</li>
+        <li>Comparaison de deux approches algorithmiques pour une même mécanique</li>
+      </ul>
+    </div>
+
+    <div class="content-block reveal">
+      <h2>Extrait de code</h2>
+      <div class="code-block">
+        <div class="code-block-header">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <span class="code-lang">C++ — game.cpp</span>
+        </div>
+        <pre><span class="cm">// Boucle de jeu principale</span>
+<span class="kw">void</span> <span class="fn">Game</span>::<span class="fn">run</span>() {
+  <span class="kw">while</span> (isRunning) {
+    <span class="fn">handleInput</span>();
+    <span class="fn">update</span>(deltaTime);
+    <span class="fn">render</span>();
+    deltaTime = clock.<span class="fn">restart</span>().<span class="fn">asSeconds</span>();
+  }
+}
+
+<span class="cm">// Détection de collision (approche O(n²))</span>
+<span class="kw">bool</span> <span class="fn">checkCollision</span>(Entity&amp; a, Entity&amp; b) {
+  <span class="kw">return</span> a.x &lt; b.x + b.width  &amp;&amp;
+         a.x + a.width  &gt; b.x  &amp;&amp;
+         a.y &lt; b.y + b.height &amp;&amp;
+         a.y + a.height &gt; b.y;
+}</pre>
+      </div>
+    </div>
+
+    <div class="content-block reveal">
+      <h2>Ce que j'ai appris</h2>
+      <div class="learning-grid">
+        <div class="learning-item"><strong>Programmation orientée objet</strong>Héritage, encapsulation et polymorphisme appliqués à des entités de jeu concrètes.</div>
+        <div class="learning-item"><strong>Complexité algorithmique</strong>Comparaison pratique entre O(n²) et O(n log n) sur des cas réels de collision.</div>
+        <div class="learning-item"><strong>Gestion de la mémoire</strong>Utilisation des pointeurs, références et bonnes pratiques en C++.</div>
+        <div class="learning-item"><strong>Débogage C++</strong>Utilisation de GDB et Valgrind pour traquer les fuites mémoire et erreurs.</div>
+      </div>
+    </div>
+
+    <div class="content-block reveal">
+      <h2>Difficultés rencontrées</h2>
+      <p>La principale difficulté a été la gestion du temps réel en console, notamment la synchronisation entre les entrées clavier et le rendu. J'ai dû implémenter une boucle de jeu avec un delta time précis pour garantir une expérience fluide indépendante de la machine.</p>
+      <p>La comparaison des deux approches algorithmiques a également nécessité une rigueur dans la mise en place des benchmarks pour obtenir des résultats comparables.</p>
+    </div>
+
+  </div>
+
+  <aside class="project-sidebar">
+    <div class="sidebar-card reveal">
+      <h3>Stack technique</h3>
+      <div class="sidebar-stack">
+        <div class="stack-item"><div class="stack-dot coral"></div>C++17</div>
+        <div class="stack-item"><div class="stack-dot"></div>GCC / G++</div>
+        <div class="stack-item"><div class="stack-dot purple"></div>GDB (débogage)</div>
+        <div class="stack-item"><div class="stack-dot teal"></div>Makefile</div>
+        <div class="stack-item"><div class="stack-dot"></div>Linux / Terminal</div>
+      </div>
+    </div>
+    <div class="sidebar-card reveal reveal-delay-1">
+      <h3>Statistiques</h3>
+      <div class="sidebar-stats">
+        <div class="stat"><span class="stat-label">Durée</span><span class="stat-value">3 semaines</span></div>
+        <div class="stat"><span class="stat-label">Lignes de code</span><span class="stat-value">~600 lignes</span></div>
+        <div class="stat"><span class="stat-label">Type</span><span class="stat-value" style="font-size:.9rem">Projet solo</span></div>
+        <div class="stat">
+          <span class="stat-label">Difficulté</span>
+          <div class="difficulty-bar">
+            <div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot filled"></div><div class="diff-dot"></div><div class="diff-dot"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-card reveal reveal-delay-2">
+      <h3>Liens</h3>
+      <div class="sidebar-links">
+        <a href="#" class="sidebar-link">
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M15.97 9.058l-.895-2.756L13.3 1.7a.37.37 0 00-.703 0L10.82 6.3H5.18L3.403 1.7a.37.37 0 00-.703 0L.925 6.302.03 9.058a.704.704 0 00.256.787L8 15.002l7.714-5.157a.704.704 0 00.256-.787"/></svg>
+          Voir sur GitLab
+        </a>
+        <a href="index.html#projects" class="sidebar-link">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5h11M7.5 2l5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Tous les projets
+        </a>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<div class="project-nav">
+  <a href="#" class="project-nav-btn disabled">
+    <div class="nav-btn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div><div class="nav-btn-label">Précédent</div><div class="nav-btn-title">—</div></div>
+  </a>
+  <a href="projet-2.html" class="project-nav-btn next">
+    <div class="nav-btn-icon"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div><div class="nav-btn-label">Suivant</div><div class="nav-btn-title">Site agence de voyage</div></div>
+  </a>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <a href="index.html" class="nav-logo">CF.</a>
+    <p>Étudiant en BUT Informatique à l'IUT Paris-Saclay</p>
+    <p class="footer-copy">© 2025 <span>Corentin Fauveau</span>. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }), {threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>

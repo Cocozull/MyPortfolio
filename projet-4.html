@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Raspberry Pi — Corentin Fauveau</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="project-style.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">CF.</a>
+    <a href="index.html#projects" class="nav-back">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Retour au portfolio
+    </a>
+  </nav>
+
+  <div class="project-hero-orb orb-a" style="background:var(--c-accent2)"></div>
+  <div class="project-hero-orb orb-b" style="background:var(--c-accent3)"></div>
+
+  <div class="project-hero">
+    <div class="project-eyebrow reveal">Projet académique · Linux & Systèmes</div>
+    <h1 class="reveal">Environnement dev<br>sur Raspberry Pi 400</h1>
+    <div class="project-hero-tags reveal reveal-delay-1">
+      <span class="tag tag-purple">Linux</span>
+      <span class="tag">Raspberry Pi</span>
+      <span class="tag">Administration système</span>
+      <span class="tag tag-teal">Accès distant</span>
+    </div>
+    <div class="project-hero-meta reveal reveal-delay-2">
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="2" width="12" height="11" rx="2" stroke="currentColor" stroke-width="1.2"/><path d="M1 6h12M5 2v4" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span><strong>2024–2025</strong> · BUT 1</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="6" stroke="currentColor" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <span><strong>~2 semaines</strong> de configuration</span>
+      </div>
+      <div class="meta-item">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1l1.8 3.6L13 5.3l-3 2.9.7 4.1L7 10.4l-3.7 1.9.7-4.1-3-2.9 4.2-.7z" stroke="currentColor" stroke-width="1.2"/></svg>
+        <span><strong>IUT Paris-Saclay</strong> · Module systèmes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-main-img reveal">
+    <div class="img-placeholder" style="background:linear-gradient(135deg,#1a0f3a,#2f1a5e)">
+      <img src="images/rasberry.png" alt="Raspberry Pi 400">
+    </div>
+  </div>
+
+  <div class="project-content">
+    <div class="project-main">
+
+      <div class="content-block reveal">
+        <h2>Présentation du projet</h2>
+        <p>Ce projet consiste en l'installation et la configuration complète d'un environnement de développement sur un Raspberry Pi 400, une machine compacte fonctionnant sous Linux. L'objectif était de maîtriser l'administration système de base et de rendre la machine accessible à distance depuis un autre poste.</p>
+        <p>Au-delà de la simple installation, ce projet m'a confronté aux réalités du travail en ligne de commande, de la gestion des permissions et de la sécurisation d'un accès réseau.</p>
+      </div>
+
+      <div class="content-block reveal">
+        <h2>Étapes réalisées</h2>
+        <ul class="feature-list">
+          <li>Installation de Raspberry Pi OS sur carte microSD via Raspberry Pi Imager</li>
+          <li>Configuration initiale du système : locale, timezone, hostname, clavier</li>
+          <li>Mise à jour complète du système via <code style="background:var(--c-card);padding:1px 6px;border-radius:4px;font-size:.85em">apt update && apt upgrade</code></li>
+          <li>Création et gestion des utilisateurs avec attribution des droits sudo</li>
+          <li>Installation et configuration du serveur SSH pour l'accès distant</li>
+          <li>Connexion depuis un poste distant via terminal et VS Code Remote SSH</li>
+          <li>Installation des outils de développement : GCC, Python3, Git, Make</li>
+          <li>Configuration du pare-feu avec UFW pour sécuriser les ports ouverts</li>
+        </ul>
+      </div>
+
+      <div class="content-block reveal">
+        <h2>Commandes clés</h2>
+        <div class="code-block">
+          <div class="code-block-header">
+            <div class="code-dots"><span></span><span></span><span></span></div>
+            <span class="code-lang">Bash — configuration SSH</span>
+          </div>
+          <pre><span class="cm"># Mise à jour du système</span>
+<span class="fn">sudo</span> apt update <span class="kw">&&</span> <span class="fn">sudo</span> apt upgrade -y
+
+<span class="cm"># Installation et activation SSH</span>
+<span class="fn">sudo</span> apt install openssh-server
+<span class="fn">sudo</span> systemctl enable ssh
+<span class="fn">sudo</span> systemctl start ssh
+
+<span class="cm"># Création d'un utilisateur développeur</span>
+<span class="fn">sudo</span> adduser devuser
+<span class="fn">sudo</span> usermod -aG sudo devuser
+
+<span class="cm"># Configuration du pare-feu</span>
+<span class="fn">sudo</span> ufw allow ssh
+<span class="fn">sudo</span> ufw enable
+<span class="fn">sudo</span> ufw status
+
+<span class="cm"># Connexion depuis un autre poste</span>
+<span class="fn">ssh</span> devuser@<span class="nb">192.168.1.XX</span></pre>
+        </div>
+      </div>
+
+
+      <div class="content-block reveal">
+        <h2>Ce que j'ai appris</h2>
+        <div class="learning-grid">
+          <div class="learning-item">
+            <strong>Administration Linux</strong>
+            Gestion des paquets apt, des services systemctl et des logs système.
+          </div>
+          <div class="learning-item">
+            <strong>Gestion des permissions</strong>
+            Utilisateurs, groupes, droits sudo et permissions sur les fichiers.
+          </div>
+          <div class="learning-item">
+            <strong>Réseau & SSH</strong>
+            Configuration SSH, clés RSA, accès distant sécurisé et tunneling.
+          </div>
+          <div class="learning-item">
+            <strong>Sécurité système</strong>
+            Pare-feu UFW, désactivation du root SSH, bonnes pratiques de base.
+          </div>
+        </div>
+      </div>
+
+      <div class="content-block reveal">
+        <h2>Difficultés rencontrées</h2>
+        <p>La configuration réseau a été la principale difficulté : obtenir une adresse IP fixe sur le réseau local pour pouvoir se connecter de manière fiable en SSH a nécessité de comprendre le fonctionnement du DHCP et de configurer une IP statique côté routeur.</p>
+        <p>La gestion des permissions Linux m'a aussi posé des problèmes au début — comprendre la différence entre les droits utilisateur, groupe et autres, et savoir quand utiliser sudo sans compromettre la sécurité, était une courbe d'apprentissage importante.</p>
+      </div>
+
+    </div>
+
+    <aside class="project-sidebar">
+
+      <div class="sidebar-card reveal">
+        <h3>Stack technique</h3>
+        <div class="sidebar-stack">
+          <div class="stack-item"><div class="stack-dot purple"></div>Raspberry Pi OS</div>
+          <div class="stack-item"><div class="stack-dot"></div>Bash / Terminal</div>
+          <div class="stack-item"><div class="stack-dot teal"></div>OpenSSH</div>
+          <div class="stack-item"><div class="stack-dot coral"></div>UFW (pare-feu)</div>
+          <div class="stack-item"><div class="stack-dot"></div>VS Code Remote SSH</div>
+          <div class="stack-item"><div class="stack-dot"></div>Git, GCC, Python3</div>
+        </div>
+      </div>
+
+      <div class="sidebar-card reveal reveal-delay-1">
+        <h3>Statistiques</h3>
+        <div class="sidebar-stats">
+          <div class="stat">
+            <span class="stat-label">Durée</span>
+            <span class="stat-value">2 semaines</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Matériel</span>
+            <span class="stat-value" style="font-size:.9rem">Raspberry Pi 400</span>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Difficulté</span>
+            <div class="difficulty-bar">
+              <div class="diff-dot filled"></div>
+              <div class="diff-dot filled"></div>
+              <div class="diff-dot filled"></div>
+              <div class="diff-dot filled"></div>
+              <div class="diff-dot"></div>
+            </div>
+          </div>
+          <div class="stat">
+            <span class="stat-label">Type</span>
+            <span class="stat-value" style="font-size:.9rem">Projet solo</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-card reveal reveal-delay-2">
+        <h3>Liens</h3>
+        <div class="sidebar-links">
+          <a href="#" class="sidebar-link">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M15.97 9.058l-.895-2.756L13.3 1.7a.37.37 0 00-.703 0L10.82 6.3H5.18L3.403 1.7a.37.37 0 00-.703 0L.925 6.302.03 9.058a.704.704 0 00.256.787L8 15.002l7.714-5.157a.704.704 0 00.256-.787"/></svg>
+            Voir sur GitLab
+          </a>
+          <a href="index.html#projects" class="sidebar-link">
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2 7.5h11M7.5 2l5.5 5.5-5.5 5.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Tous les projets
+          </a>
+        </div>
+      </div>
+
+    </aside>
+  </div>
+
+  <div class="project-nav">
+    <a href="projet-3.html" class="project-nav-btn">
+      <div class="nav-btn-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 3L5 8l5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="nav-btn-label">Précédent</div>
+        <div class="nav-btn-title">Base de données entreprise</div>
+      </div>
+    </a>
+    <a href="#" class="project-nav-btn next disabled">
+      <div class="nav-btn-icon">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="nav-btn-label">Suivant</div>
+        <div class="nav-btn-title">—</div>
+      </div>
+    </a>
+  </div>
+
+  <footer>
+    <p>Fait avec ❤️ par <span>Corentin Fauveau</span> — 2025 · IUT Paris-Saclay</p>
+  </footer>
+
+  <script>
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+  </script>
+</body>
+</html>
